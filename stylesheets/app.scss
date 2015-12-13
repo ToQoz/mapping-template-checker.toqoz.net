@@ -1,0 +1,97 @@
+$input-color: #b87a79;
+$output-color: #a8aa83;
+$border-width: 0.3rem;
+
+$textarea-padding: 0.44rem;
+$textarea-line-height: 1.2;
+$textarea-height: 8rem * $textarea-line-height + $textarea-padding * 2;
+
+$label-padding-top: 0.5rem;
+$label-padding-bottom: 0.3rem;
+$label-height: 1rem + $label-padding-top + $label-padding-bottom;
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.code {
+    font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+}
+
+.icon-edit {
+    $size: 1.3rem;
+
+    margin-right: 0.3rem;
+    background-image: url(/images/icon-comic-edit.png);
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.label {
+    display: block;
+    padding-top: $label-padding-top;
+    padding-bottom: $label-padding-bottom;
+    height: $label-height;
+}
+
+form {
+    margin-bottom: 2rem;
+
+    label {
+        @extend .label;
+    }
+
+    textarea {
+        border: $border-width solid $input-color;
+        background-color: lighten($input-color, 35);
+        border-radius: 0.44rem;
+        padding: $textarea-padding;
+
+        height: $textarea-height;
+        font-size: 1rem;
+        line-height: $textarea-line-height;
+
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+#result {
+    $padding: $textarea-padding;
+
+    box-sizing: border-box;
+    padding: $padding;
+    border: $border-width solid $output-color;
+    background-color: lighten($output-color, 35);
+    line-height: $textarea-line-height;
+
+    font-size: 1rem;
+    min-height: $label-height + $textarea-height * 2 + $border-width * 2;
+
+    border-radius: 0.44rem;
+}
+
+.input-pane,
+.result-pane {
+    box-sizing: border-box;
+    width: 49%;
+
+    &.input-pane  { float: left; }
+    &.result-pane { float: right; }
+}

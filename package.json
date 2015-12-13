@@ -1,0 +1,22 @@
+{
+  "name": "mapping-template-checker.toqoz.net",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp build && gulp serve"
+  },
+  "author": "Takatoshi Matsumoto",
+  "license": "MIT",
+  "devDependencies": {
+    "api-gateway-mapping-template": "^0.0.1",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-webserver": "^0.9.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

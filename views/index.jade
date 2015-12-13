@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+  title AWS API Gateway Mapping Template Checker
+
+  meta(charset='utf-8')
+  meta(http-equiv='x-ua-compatible', content='ie=edge')
+  meta(name='viewport', content='width=device-width,initial-scale=1')
+
+  link(rel="stylesheet", type="text/css", href="/stylesheets/app.css")
+
+  script(src='/javascripts/app.js')
+
+body
+  h1 AWS API Gateway Mapping Template Checker
+
+  ul
+    li
+      a(href="https://github.com/ToQoz/api-gateway-mapping-template") Repository
+    li
+      a(href="https://github.com/ToQoz/api-gateway-mapping-template") Npm
+
+  form
+    .container
+      .input-pane
+        label(for='template')
+          i.icon-edit
+          | Mapping Template
+        textarea.code#template(autofocus)
+        label(for='payload')
+          i.icon-edit
+          | Payload
+        textarea.code#payload
+
+      .result-pane
+        .label Result
+        #result.code
+
+  img(src='http://toqoz.net/art/api-gateway-mapping-template.png' alt='logo')
