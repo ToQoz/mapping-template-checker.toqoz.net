@@ -11,6 +11,10 @@ var requestAnimationFrame =
   };
 
 document.addEventListener('DOMContentLoaded', function() {
+  var text = document.body.textContent !== undefined ?
+    function(node, text) { node.textContent = text; } :
+    function(node, text) { node.innerText = text; };
+
   var mainloop = function() {
     requestAnimationFrame(mainloop);
     if (needRender) {
@@ -26,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var template = templateNode.value;
     var payload = payloadNode.value;
     var result = mappingTemplate(template, payload);
-    resultNode.innerText = result;
+    text(resultNode, result);
   };
 
   templateNode.value = '"$input.path(\'$\')"';
