@@ -29,7 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var render = function() {
     var template = templateNode.value;
     var payload = payloadNode.value;
-    var result = mappingTemplate(template, payload);
+    var result;
+    try {
+      result = mappingTemplate(template, payload);
+    } catch (err) {
+      result = err;
+    }
     text(resultNode, result);
   };
 
