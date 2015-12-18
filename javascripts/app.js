@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var payload = payloadNode.value;
     var result;
     try {
-      result = mappingTemplate(template, payload);
+      result = mappingTemplate({template: template, payload: payload});
     } catch (err) {
       result = err;
     }
